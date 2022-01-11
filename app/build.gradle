@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility Config.java_version
+        targetCompatibility Config.java_version
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(Modules.models)
+    implementation project(Modules.utils)
+    implementation project(Modules.config)
+    implementation project(Modules.db)
+    implementation project(Modules.repository)
+    implementation AndroidBase.core
+    implementation AndroidBase.appCompat
+    implementation AndroidBase.gson
+    implementation AndroidBase.legacy
+    kapt AndroidBase.databinding
+
+    implementation AndroidDesign.material
+    implementation AndroidDesign.constraintLayout
+    implementation AndroidDesign.navigationCompose
+    implementation AndroidDesign.navigationFragment
+    implementation AndroidDesign.navigationUI
+    implementation AndroidDesign.cardView
+    implementation AndroidDesign.recyclerview
+    implementation AndroidDesign.lifecycleExtensions
+    implementation AndroidDesign.lifecycleViewModel
+    kapt AndroidDesign.design
+
+    testImplementation TestUnit.junit
+    androidTestImplementation TestUnit.junitExt
+    androidTestImplementation TestUnit.espressoCore
+
+    implementation Kotlin.kotlin
+
+    // RxJava 3 - реактивность
+    implementation RxJava.rxjava
+
+    //Retrofit 2 - запрос с сервера данных
+    implementation Retrofit.retrofit
+    implementation Retrofit.gson
+    implementation Retrofit.okhttp
+    implementation Retrofit.rxjava3
+    implementation Retrofit.RetrofitCoroutine
+
+    //Koin - dependency injection
+    implementation KoinDI.core
+    implementation KoinDI.koinAndroid
+    implementation KoinDI.koinAndroidCompat
+
+    //Room - локальная БД
+    implementation Room.runtime
+    implementation Room.ktx
+    kapt Room.compiler
+
+    // Mockito - тестирование
+    testImplementation Mockito.mockitoCore
+    testImplementation Mockito.mockitoInline
+    testImplementation(Mockito.mockitoKotlin) {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+}

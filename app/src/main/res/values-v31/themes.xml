@@ -1,0 +1,147 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="ThemeAmicumMobile" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/strokeColor</item>
+        <item name="colorPrimaryVariant">#5A6272</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorAccent">@color/strokeColor</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">Roboto</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="actionModeBackground">@color/white</item>
+        <item name="textInputStyle">@style/TextLayout</item>
+        <item name="materialButtonStyle">@style/MaterialButtonStyle</item>
+        <item name="navigationViewStyle">@style/NavigationView</item>
+        <item name="appBarLayoutStyle">@style/AppBarLayout</item>
+
+        <item name="android:windowSplashScreenBackground">@color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="LabelText" parent="ThemeAmicumMobile">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">#B3B3B3</item>
+    </style>
+
+    <style name="LabelMessageText" parent="ThemeAmicumMobile">
+        <item name="android:textColor">#B55A6E</item>
+        <item name="android:textColorHint">#B3B3B3</item>
+    </style>
+
+    <style name="TextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#B3B3B3</item>
+        <item name="hintTextColor">@color/strokeColor</item>
+        <item name="boxStrokeColor">@color/strokeColor</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlHighlight">@color/purple_700</item>
+        <item name="colorControlActivated">@color/strokeColor</item>
+    </style>
+
+    <style name="CheckBox" parent="ThemeAmicumMobile">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:buttonTint">#999999</item>
+        <item name="android:textColorHint">#B3B3B3</item>
+    </style>
+
+    <style name="MaterialButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#598D9B</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <!--        <item name="android:background">@drawable/button_effect</item>-->
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <style name="MaterialButtonStyleWhiteBackground" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <style name="MaterialButtonStyleAppBarTopBackground" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/app_bar_layout</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">40dp</item>
+    </style>
+
+    <style name="MaterialButtonStyleMainMenu" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:padding">0sp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="MainMenuStyle">
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:choiceMode">none</item>
+    </style>
+
+    <style name="AppBarLayout" parent="Widget.Design.AppBarLayout">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/app_bar_layout</item>
+    </style>
+
+    <style name="NotificationListItem" parent="ThemeAmicumMobile">
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:background">@drawable/fragment_rounded_shadow</item>
+    </style>
+
+    <style name="NotificationList.Title" parent="Widget.MaterialComponents.TextView">
+        <item name="android:gravity">center|start</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/notificationTitle</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="Notification.TextViewLeft" parent="Widget.MaterialComponents.TextView">
+        <item name="android:gravity">center|start</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Notification.TextViewRight" parent="Widget.MaterialComponents.TextView">
+        <item name="android:gravity">center|end</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Тулбар поиска пример-->
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="layout">@layout/toolbar_search_view</item>
+        <item name="commitIcon">@drawable/ic_search_commit</item>
+        <item name="colorControlNormal">@color/material_light_active_icon</item>
+        <item name="colorControlHighlight">@color/material_ripple_light</item>
+        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextViewStyle</item>
+        <item name="suggestionRowLayout">@layout/search_view_suggestion_row</item>
+        <item name="android:maxWidth">9999dp</item>
+    </style>
+
+    <style name="AutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:popupBackground">@drawable/search_suggestions_bg</item>
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="searchViewStyle">@style/SearchViewTheme</item>
+    </style>
+    <!--end-->
+
+
+</resources>

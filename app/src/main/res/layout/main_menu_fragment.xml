@@ -1,0 +1,54 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <FrameLayout
+            android:id="@+id/containerAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+            android:text="OPEN_MAIN_MENU"
+            android:stateListAnimator="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/openMainMenu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            tools:padding="0dp" />
+
+    <SearchView
+            android:background="@color/app_bar_layout"
+            android:id="@+id/searchView"
+            tools:text="sdfgsdfg"
+            android:nextFocusDown="@id/layoutPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+
+            app:layout_constraintTop_toBottomOf="@+id/containerAppBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/openMainMenu" />
+
+    <TextView
+            android:id="@+id/txtSearchResult"
+            tools:text="Результат"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            app:layout_constraintBottom_toTopOf="@+id/openMainMenu"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wrongLoginPwd">Неверно указан логин/пароль</string>
+    <string name="emptyLogin">Заполните логин</string>
+    <string name="emptyPwd">Заполните пароль</string>
+</resources>

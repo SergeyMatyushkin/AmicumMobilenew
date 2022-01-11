@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/activity_main.xml" value="0.266015625" />
+        <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/group_notification_fragment.xml" value="0.196484375" />
+        <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/main_menu_fragment.xml" value="0.266015625" />
+        <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.278125" />
+        <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.278125" />
+        <entry key="..\:/Git_Repos/AmicumMobile/utils/src/main/res/drawable/fg.xml" value="0.20859375" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/drawable/ic_search_commit.xml" value="0.278125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/drawable/numpad_button_bg_normal.xml" value="0.278125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/drawable/search_suggestions_bg.xml" value="0.278125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/app_bar_top_main_fragment.xml" value="0.18066939890710382" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/authorization_fragment.xml" value="0.149609375" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/group_notification_fragment.xml" value="0.1197398622800306" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/header_navigation_main_drawer.xml" value="0.23203125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/main_menu_fragment.xml" value="0.25" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/navigation_main_menu_fragment.xml" value="0.23203125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/personal_notification_item_fragment.xml" value="0.406640625" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/personal_notification_list_item_fragment.xml" value="0.33" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/search_view_suggestion_row.xml" value="0.266015625" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/splash_screen_fragment.xml" value="0.23203125" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/layout/toolbar_search_view.xml" value="0.266015625" />
+        <entry key="..\:/[Git] Repos/AmicumMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.278125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android API 30 Platform" project-jdk-type="Android SDK" />
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

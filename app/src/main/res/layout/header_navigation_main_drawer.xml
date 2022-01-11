@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/actionModeBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            android:id="@+id/constraintLayout2">
+
+        <com.google.android.material.textview.MaterialTextView
+                style="@style/MainMenuStyle"
+                android:id="@+id/tvFIOWorker"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:gravity="center|start"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="1452221 | Иванов И.И. Горный мастер"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvFIOWorker"
+                android:foregroundGravity="center"
+                app:layout_constraintTop_toTopOf="@+id/tvFIOWorker"
+                android:layout_marginTop="8dp">
+
+            <ImageView
+                    android:id="@+id/imgPhotoWorker"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/logo_small"
+                    android:contentDescription="@string/WorkerPhoto" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline8"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:baselineAligned="false"
+            android:id="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9">
+
+        <com.google.android.material.textview.MaterialTextView
+                style="@style/MainMenuStyle"
+                android:layout_width="match_parent"
+                android:id="@+id/tvCompanyWorker"
+                android:gravity="center|start"
+                android:layout_marginEnd="20dp"
+                tools:text="АО 'Воркутауголь' / ш.Комсомольская / Производственная служба / УКТ"
+                android:layout_height="70dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuOnMain"
+                android:text="@string/lblOnMain"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_home"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvCompanyWorker" />
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuFillReport"
+                android:text="@string/lblFillReports"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_report"
+
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnMainMenuOnMain" />
+
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuCalcMaterials"
+                android:text="@string/lblMaterials"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_materials"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnMainMenuFillReport" />
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuCalcStops"
+                android:text="@string/lblCalcStops"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_time"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnMainMenuCalcMaterials" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline10"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline11"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+        <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="@+id/btnMainMenuCalcStops"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+
+                app:layout_constraintEnd_toStartOf="@+id/guideline11" />
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuNotifications"
+                android:text="@string/lblNotification"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_with_notification"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuSettings"
+                android:text="@string/lblSettings"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_setting"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnMainMenuNotifications" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline9"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9">
+
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleMainMenu"
+                android:id="@+id/btnMainMenuExit"
+                android:textColor="@color/red"
+                android:text="@string/lblExit"
+                android:gravity="center|start"
+                android:layout_width="match_parent"
+                android:drawableEnd="@drawable/icon_exit"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="10dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

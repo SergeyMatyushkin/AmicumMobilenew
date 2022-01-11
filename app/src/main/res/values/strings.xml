@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AmicumMobile</string>
+    <string name="logo_description">Логотип системы</string>
+    <string name="lblExit">Выйти</string>
+    <string name="lblSettings">Настройки</string>
+    <string name="lblNotification">Уведомления</string>
+    <string name="lblCalcStops">Учет простоев</string>
+    <string name="lblMaterials">Учет материалов</string>
+    <string name="lblFillReports">Заполнить отчет</string>
+    <string name="lblOnMain">На главную</string>
+    <string name="WorkerPhoto">ФОТО работника</string>
+    <string name="amicum_mobile">Amicum mobile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="groupNotification">Групповые</string>
+    <string name="personalNotification">Личные</string>
+    <string name="pabNotification">Вам выдан ПАБ №</string>
+    <string name="medicalNotification">Вам необходимо пройти медосмотр в период с</string>
+    <string name="checkKnowledgeNotification">Вам назначена аттестация</string>
+    <string name="briefingNotification">Вам необходимо пройти инструктаж</string>
+    <string name="po">по</string>
+    <string name="ot">от</string>
+    <string name="ppkPab">ППК ПАБ</string>
+    <string name="empty_server_response_on_success">Ответ с сервера пустой</string>
+</resources>

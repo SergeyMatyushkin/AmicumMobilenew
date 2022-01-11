@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Тулбар поиска пример-->
+    <dimen name="item_list_horizontal_margin">10dp</dimen>
+    <!--    end-->
+</resources>

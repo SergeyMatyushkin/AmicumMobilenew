@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/authorization_background_color">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/fragment_rounded"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                app:srcCompat="@drawable/logo_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/smallLogo"/>
+        <com.google.android.material.button.MaterialButton
+                style="@style/MaterialButtonStyleWhiteBackground"
+                android:id="@+id/btnCloseApplication"
+                android:text="@string/btnCloseApplication"
+                android:layout_width="89dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="25dp"
+                android:background="#FFFFFF"
+                android:textColor="#EF7F1A"
+                android:fontFamily="@font/roboto_regular"/>
+        <com.google.android.material.textview.MaterialTextView
+                android:text="@string/lblEntryInSystem"
+                android:id="@+id/lblEntryInSystem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="124dp"
+                android:layout_marginStart="14dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_regular"/>
+        <com.google.android.material.textview.MaterialTextView
+                android:text="@string/lblWelcome"
+                android:id="@+id/lblWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_regular" app:layout_constraintTop_toBottomOf="@+id/lblEntryInSystem"
+                android:layout_marginTop="15dp"
+        />
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextLayout"
+                android:id="@+id/layoutLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="@string/hintLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblWelcome" android:layout_marginTop="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtLogin"
+                    tools:text="sdfgsdfg"
+                    android:nextFocusDown="@id/layoutPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" android:lines="1" android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutPwd"
+                app:passwordToggleEnabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="@string/lblPwd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutLogin" android:layout_marginTop="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPwd"
+                    tools:text="sdfgsdfg"
+                    android:nextFocusDown="@id/btnLogin"
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" android:lines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+                style="@style/CheckBox"
+                android:id="@+id/checkBox"
+                android:text="@string/chkActiveDirectory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPwd"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:text="@string/btnLogin"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
