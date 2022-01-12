@@ -21,12 +21,18 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     compileOptions {
         sourceCompatibility Config.java_version
         targetCompatibility Config.java_version
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
@@ -40,6 +46,7 @@ dependencies {
     implementation AndroidBase.appCompat
     implementation AndroidBase.gson
     implementation AndroidBase.legacy
+
     kapt AndroidBase.databinding
 
     implementation AndroidDesign.material
@@ -53,32 +60,43 @@ dependencies {
     implementation AndroidDesign.lifecycleViewModel
     kapt AndroidDesign.design
 
+    //Robolectric
+    testImplementation TestUnit.robolectric
+    testImplementation TestUnit.testCore
+    testImplementation TestUnit.testRunner
+    testImplementation TestUnit.testExtTruth
+    testImplementation TestUnit.espressoIntents
+    testImplementation TestUnit.espressoCore
     testImplementation TestUnit.junit
     androidTestImplementation TestUnit.junitExt
-    androidTestImplementation TestUnit.espressoCore
+    debugImplementation TestUnit.fragmentTesting
 
+    debugImplementation 'androidx.fragment:fragment-testing:1.4.0'
+    testImplementation 'org.robolectric:robolectric:4.6'
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'androidx.test:runner:1.4.0'
+    testImplementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'androidx.test.ext:truth:1.4.0'
+    testImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
     implementation Kotlin.kotlin
 
     // RxJava 3 - реактивность
     implementation RxJava.rxjava
-
     //Retrofit 2 - запрос с сервера данных
     implementation Retrofit.retrofit
     implementation Retrofit.gson
     implementation Retrofit.okhttp
     implementation Retrofit.rxjava3
     implementation Retrofit.RetrofitCoroutine
-
     //Koin - dependency injection
     implementation KoinDI.core
     implementation KoinDI.koinAndroid
     implementation KoinDI.koinAndroidCompat
-
     //Room - локальная БД
     implementation Room.runtime
     implementation Room.ktx
     kapt Room.compiler
-
     // Mockito - тестирование
     testImplementation Mockito.mockitoCore
     testImplementation Mockito.mockitoInline

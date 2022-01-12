@@ -46,9 +46,15 @@ object Version {
     const val junit = "4.13.2"
     const val junitExt = "1.1.3"
     const val espressoCore = "3.4.0"
+    const val espressoIntents = "3.4.0"
     const val mockitoCore = "4.1.0"
     const val mockitoInline = "4.1.0"
     const val mockitoKotlin = "1.5.0"
+    const val robolectric = "4.6"
+    const val testCore = "1.4.0"
+    const val testRunner = "1.4.0"
+    const val testExtTruth = "1.4.0"
+    const val fragmentTesting = "1.4.0"
 }
 
 object RxJava {
@@ -57,8 +63,8 @@ object RxJava {
 
 object KoinDI {
     const val core = "io.insert-koin:koin-core:${Version.koin}"                                     //Основная библиотека
-    const val koinAndroid = "io.insert-koin:koin-android:${Version.koin}"                          //Koin для поддержки Android (Scope,ViewModel ...)
-    const val koinAndroidCompat = "io.insert-koin:koin-android-compat:${Version.koin}"             //Для совместимости с Java
+    const val koinAndroid = "io.insert-koin:koin-android:${Version.koin}"                           //Koin для поддержки Android (Scope,ViewModel ...)
+    const val koinAndroidCompat = "io.insert-koin:koin-android-compat:${Version.koin}"              //Для совместимости с Java
 }
 
 object Retrofit {
@@ -106,9 +112,15 @@ object AndroidBase {
 }
 
 object TestUnit {
+    const val robolectric = "org.robolectric:robolectric:${Version.robolectric}"
     const val junit = "junit:junit:${Version.junit}"
     const val junitExt = "androidx.test.ext:junit:${Version.junitExt}"
+    const val testCore = "androidx.test:core:${Version.testCore}"
+    const val testRunner = "androidx.test:runner:${Version.testRunner}"
+    const val testExtTruth = "androidx.test.ext:truth:${Version.testExtTruth}"
+    const val espressoIntents = "androidx.test.espresso:espresso-intents:${Version.espressoIntents}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Version.espressoCore}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Version.fragmentTesting}"
 }
 
 

@@ -103,6 +103,11 @@ class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
         mCallback = context as IAppMain
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        mCallback = null
+    }
+
 
     private fun renderData(userSession: com.example.models.UserSession?) {
         if (userSession == null) {

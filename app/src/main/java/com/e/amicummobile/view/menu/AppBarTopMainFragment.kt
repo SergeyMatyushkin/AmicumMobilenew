@@ -147,4 +147,10 @@ class AppBarTopMainFragment : Fragment() {
         super.onAttach(context)
         mCallback = context as IAppMainMenu
     }
+
+    override fun onDetach() {
+        super.onDetach()
+        mCallback = null
+    }
+
 }
