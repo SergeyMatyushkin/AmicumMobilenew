@@ -11,6 +11,8 @@ import com.e.amicummobile.databinding.GroupNotificationFragmentBinding
 import org.koin.core.qualifier.named
 import org.koin.core.scope.Scope
 import org.koin.java.KoinJavaComponent
+import com.e.amicummobile.view.BaseFragment
+import com.example.models.Notification
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [GroupNotificationFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GroupNotificationFragment : Fragment() {
+class GroupNotificationFragment : BaseFragment<Notification>() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

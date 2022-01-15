@@ -12,7 +12,7 @@ import com.example.models.Notification
 import com.example.models.NotificationList
 import com.google.android.material.imageview.ShapeableImageView
 
-class RvPersonalNotificationAdapter(private val notificationList: ArrayList<com.example.models.NotificationList<com.example.models.Notification>>) :
+class RvPersonalNotificationAdapter(private val notificationList: ArrayList<NotificationList<Notification>>) :
     RecyclerView.Adapter<RvPersonalNotificationAdapter.PersonalNotificationHolder>() {
 
     class PersonalNotificationHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

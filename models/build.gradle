@@ -6,4 +6,12 @@ plugins {
 dependencies {
     implementation AndroidBase.core
     implementation Kotlin.kotlin
+
+}
+
+android {
+    signingConfigs {
+        release {
+        }
+    }
 }

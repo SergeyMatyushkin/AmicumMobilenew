@@ -4,15 +4,18 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.e.amicummobile.viewmodel.StoreAmicum
+import org.koin.core.qualifier.named
+import org.koin.core.scope.Scope
+import org.koin.java.KoinJavaComponent
 
 abstract class BaseFragment<T> : Fragment() {
-    // Храним ссылку на презентер
-    protected lateinit var storeAmicum: StoreAmicum
+    protected lateinit var storeAmicum: StoreAmicum                                                 // Храним ссылку на вьюмодель
+    private lateinit var storeAmicumScopeInstance: Scope
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        storeAmicum = ViewModelProvider(requireActivity())[StoreAmicum::class.java]             // подключаем центрально хранилище
+        storeAmicumScopeInstance = KoinJavaComponent.getKoin().getOrCreateScope("storeAmicumScopeId", named("AMICUM_STORE"))
+        storeAmicum = storeAmicumScopeInstance.get()
     }
-
 
 }

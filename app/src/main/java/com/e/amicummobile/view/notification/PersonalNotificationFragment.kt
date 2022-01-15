@@ -1,7 +1,7 @@
 package com.e.amicummobile.view.notification
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import com.e.amicummobile.view.BaseFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +13,9 @@ import com.e.amicummobile.view.viewById
 import org.koin.core.qualifier.named
 import org.koin.core.scope.Scope
 import org.koin.java.KoinJavaComponent
+import com.example.models.Notification
 
-class PersonalNotificationFragment : Fragment() {
+class PersonalNotificationFragment : BaseFragment<Notification>() {
     private lateinit var notificationStore: StoreNotification
     private lateinit var notificationScopeInstance: Scope
 

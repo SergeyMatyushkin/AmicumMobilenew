@@ -1,26 +1,40 @@
 package com.e.amicummobile.application
 
 import android.app.Application
-import com.e.amicummobile.di.application
-import com.e.amicummobile.di.db
-import com.e.amicummobile.di.mainScreen
-import com.e.amicummobile.di.notification
+
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
+import com.e.amicummobile.BuildConfig
+import com.e.amicummobile.di.*
 
 class AmicumApp : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
             androidContext(this@AmicumApp)
-            modules(
-                listOf(
-                    application,
-                    db,
-                    mainScreen,
-                    notification
+            if (BuildConfig.BUILD_TYPE == "debug") {
+                modules(
+                    listOf(
+                        application,
+                        repositoryTest,
+                        db,
+                        mainScreen,
+                        notification,
+                        storeAmicum
+                    )
                 )
-            )
+            } else {
+                modules(
+                    listOf(
+                        application,
+                        repositoryProd,
+                        db,
+                        mainScreen,
+                        notification,
+                        storeAmicum
+                    )
+                )
+            }
         }
     }
 }

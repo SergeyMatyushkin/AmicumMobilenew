@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.e.amicummobile.view.BaseFragment
 import com.e.amicummobile.R
 import com.e.amicummobile.view.notification.adapters.VpNotificationAdapter
 import com.e.amicummobile.databinding.NotificationFragmentBinding
 import com.e.amicummobile.view.menu.AppBarTopMainFragment
-import com.e.amicummobile.viewmodel.StoreAmicum
+import com.example.models.Notification
+import com.example.models.NotificationList
 import org.koin.core.qualifier.named
 import org.koin.core.scope.Scope
 import org.koin.java.KoinJavaComponent.getKoin
@@ -18,11 +18,11 @@ import org.koin.java.KoinJavaComponent.getKoin
 /**
  * Уведомления
  */
-class NotificationFragment : Fragment() {
+class NotificationFragment : BaseFragment<Notification>() {
+
 
     private var _binding: NotificationFragmentBinding? = null
     private val binding get() = _binding!!
-    private lateinit var storeAmicum: StoreAmicum
     private lateinit var notificationStore: StoreNotification
     private lateinit var notificationScopeInstance: Scope
 
@@ -37,7 +37,7 @@ class NotificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        storeAmicum = ViewModelProvider(requireActivity())[StoreAmicum::class.java]
+
         notificationScopeInstance = getKoin().getOrCreateScope("notificationScopeId", named("NOTIFICATION_STORE"))
         notificationStore = notificationScopeInstance.get()
 
@@ -59,7 +59,7 @@ class NotificationFragment : Fragment() {
     /**
      * Метод расчета количества уведомлений
      */
-    private fun getNotificationAllSize(notificationList: ArrayList<com.example.models.NotificationList<com.example.models.Notification>>?): Int {
+    private fun getNotificationAllSize(notificationList: ArrayList<NotificationList<Notification>>?): Int {
         var sizeNotification = 0
         if (notificationList != null) {
             for (notificationListItem in notificationList) {

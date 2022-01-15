@@ -8,9 +8,11 @@ import com.e.amicummobile.viewmodel.BaseViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import kotlin.collections.ArrayList
+import com.example.models.ConfigToRequest
+import com.example.models.JsonFromServer
+import com.example.models.Notification
+import com.example.models.NotificationList
 
 
 /**
@@ -24,12 +26,12 @@ class StoreNotification(
     // STATE
     private val interactor: MainInteractor,                                                         // определяет откуда берем данные
     private val network: Network,                                                                   // состояние сети
-    private var notificationAll: MutableLiveData<ArrayList<com.example.models.NotificationList<com.example.models.Notification>>> = MutableLiveData(),// список уведомлений пользователя
+    private var notificationAll: MutableLiveData<ArrayList<NotificationList<Notification>>> = MutableLiveData(),// список уведомлений пользователя
 ) : BaseViewModel() {
 
     // GETTER
     fun getNotificationAll() = notificationAll                                                      // получение всех уведомлений пользователя
-    fun getNotificationPersonal(): MutableLiveData<ArrayList<com.example.models.NotificationList<com.example.models.Notification>>> {     // получение персональных уведомлений пользователя
+    fun getNotificationPersonal(): MutableLiveData<ArrayList<NotificationList<Notification>>> {     // получение персональных уведомлений пользователя
         return notificationAll
     }
 
@@ -47,7 +49,7 @@ class StoreNotification(
 
         val jsonString: String = com.example.utils.Assistant.toJson(payload)
 
-        val config = com.example.models.ConfigToRequest(
+        val config = ConfigToRequest(
             "notification\\Notification",
             "GetNotificationAll",
             "",
@@ -70,9 +72,9 @@ class StoreNotification(
         val company_id: Int?
     )
 
-    private suspend fun requestNotification(configToRequest: com.example.models.ConfigToRequest, isOnline: String) =
+    private suspend fun requestNotification(configToRequest: ConfigToRequest, isOnline: String) =
         withContext(Dispatchers.IO) {
-            class Token : TypeToken<com.example.models.JsonFromServer<ArrayList<com.example.models.NotificationList<com.example.models.Notification>>>>()
+            class Token : TypeToken<JsonFromServer<ArrayList<NotificationList<Notification>>>>()
 
             val response = interactor.getData(configToRequest, isOnline)
             cancelJobs("requestNotification:SaveHandbookData")
@@ -80,7 +82,7 @@ class StoreNotification(
             val job = viewModelCoroutineScope.launch { interactor.saveHandbookData(configToRequest.method, response) }
             addJob("requestNotification:SaveHandbookData", job)
 
-            val temp: com.example.models.JsonFromServer<ArrayList<com.example.models.NotificationList<com.example.models.Notification>>> = Gson().fromJson(response, Token().type)
+            val temp: JsonFromServer<ArrayList<NotificationList<Notification>>> = Gson().fromJson(response, Token().type)
             notificationAll.postValue(temp.getItems())
         }
 

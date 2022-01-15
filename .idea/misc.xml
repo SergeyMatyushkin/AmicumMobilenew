@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/AmicumMobile-testLesson2/app/src/main/res/layout/authorization_fragment.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AmicumMobile-testLesson2/app/src/main/res/layout/main_menu_fragment.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AmicumMobile-testLesson2/app/src/main/res/layout/navigation_main_menu_fragment.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AmicumMobile-testLesson2/app/src/main/res/layout/notification_fragment.xml" value="0.1" />
         <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/activity_main.xml" value="0.266015625" />
         <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/group_notification_fragment.xml" value="0.196484375" />
         <entry key="..\:/Git_Repos/AmicumMobile/app/src/main/res/layout/main_menu_fragment.xml" value="0.266015625" />
