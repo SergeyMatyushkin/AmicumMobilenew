@@ -18,3 +18,11 @@ dependencies {
     implementation project(Modules.config)
 
 }
+
+android {
+    signingConfigs {
+        release {
+        }
+    }
+
+}

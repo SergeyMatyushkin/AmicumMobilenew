@@ -10,7 +10,7 @@ import com.e.amicummobile.R
 import com.example.utils.Assistant.convertDateToFront
 import com.example.models.Notification
 
-class RvGroupNotificationItemAdapter(private val notification: ArrayList<com.example.models.Notification>, private val notification_id: String) :
+class RvGroupNotificationItemAdapter(private val notification: ArrayList<Notification>, private val notification_id: String) :
     RecyclerView.Adapter<RvGroupNotificationItemAdapter.NotificationHolder>
         () {
 

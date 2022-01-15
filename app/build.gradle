@@ -5,6 +5,10 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     compileSdkVersion 31
 
     defaultConfig {
@@ -61,15 +65,16 @@ dependencies {
     kapt AndroidDesign.design
 
     //Robolectric
+    debugImplementation TestUnit.fragmentTesting
     testImplementation TestUnit.robolectric
     testImplementation TestUnit.testCore
     testImplementation TestUnit.testRunner
-    testImplementation TestUnit.testExtTruth
-    testImplementation TestUnit.espressoIntents
-    testImplementation TestUnit.espressoCore
     testImplementation TestUnit.junit
+    testImplementation TestUnit.testExtTruth
+    testImplementation TestUnit.espressoCore
+    androidTestImplementation TestUnit.espressoCore
+    testImplementation TestUnit.espressoIntents
     androidTestImplementation TestUnit.junitExt
-    debugImplementation TestUnit.fragmentTesting
 
     debugImplementation 'androidx.fragment:fragment-testing:1.4.0'
     testImplementation 'org.robolectric:robolectric:4.6'
@@ -79,6 +84,7 @@ dependencies {
     testImplementation 'androidx.test.ext:truth:1.4.0'
     testImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     testImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation Kotlin.kotlin
 
     // RxJava 3 - реактивность

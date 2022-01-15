@@ -7,16 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import com.e.amicummobile.R
-import com.example.config.Bootstrap
-import com.example.config.Const
 import com.e.amicummobile.databinding.AuthorizationFragmentBinding
 import com.e.amicummobile.view.menu.IAppMain
 import com.e.amicummobile.view.BaseFragment
+import android.util.Log
+import com.e.amicummobile.MainActivity
+import com.example.config.Bootstrap
+import com.example.config.Const
+import com.example.models.UserSession
 
 /**
  * Страница авторизации пользователя в системе
  */
-class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
+class AuthorizationFragment : BaseFragment<UserSession>() {
 
     private var _binding: AuthorizationFragmentBinding? = null
     private val binding get() = _binding!!
@@ -71,7 +74,7 @@ class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
             }
 
             // выполняем авторизацию
-            if (statusCheckField || com.example.config.Bootstrap.TYPE_BUILD == com.example.config.Const.VERSION_DEBUG) {
+            if (statusCheckField || Bootstrap.TYPE_BUILD == Const.VERSION_DEBUG) {
                 storeAmicum.initLogin(
                     binding.txtLogin.text.toString(),
                     binding.txtPwd.text.toString(),
@@ -100,7 +103,11 @@ class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        mCallback = context as IAppMain
+        try {
+            mCallback = context as IAppMain
+        } catch (e: Exception) {
+            Log.println(Log.ERROR, "AuthorizationFragment.onAttach", "Не смог откастовать контекст")
+        }
     }
 
     override fun onDetach() {
@@ -109,7 +116,7 @@ class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
     }
 
 
-    private fun renderData(userSession: com.example.models.UserSession?) {
+    private fun renderData(userSession: UserSession?) {
         if (userSession == null) {
             showErrorScreen(getString(R.string.empty_server_response_on_success))
             binding.layoutLogin.error = " "
@@ -118,8 +125,9 @@ class AuthorizationFragment : BaseFragment<com.example.models.UserSession>() {
             showViewSuccess()
             binding.layoutLogin.error = null
             binding.layoutPwd.error = null
+            mCallback!!.initApp("Init")
             parentFragmentManager.beginTransaction().remove(this).commitNow()
-            mCallback!!.initApp("Init")                                                   // Инициализируем приложение
+
         }
     }
 

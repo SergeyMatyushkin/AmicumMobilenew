@@ -14,6 +14,7 @@ import com.e.amicummobile.viewmodel.StoreAmicum
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.example.models.Company
 
 /**
  * Главное меню системы АМИКУМ
@@ -91,8 +92,8 @@ class MainMenuFragment : Fragment() {
                 .flatMapLatest { query ->                                                           // если был поток до этого то прибивает его и делает новый
                     storeAmicum.searchInDepartmentList(query)                                       // запрос данных из вью модели
                         .catch {                                                                    // обработка ошибок потока
-                            var depList: ArrayList<com.example.models.Company> = ArrayList()
-                            depList.add(com.example.models.Company(0, "Ошибка", 0, ArrayList(), ArrayList()))
+                            var depList: ArrayList<Company> = ArrayList()
+                            depList.add(Company(0, "Ошибка", 0, ArrayList(), ArrayList()))
                             emit(depList)
                         }
                 }
