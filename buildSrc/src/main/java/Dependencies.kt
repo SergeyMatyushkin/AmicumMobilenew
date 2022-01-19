@@ -121,6 +121,7 @@ object TestUnit {
     const val espressoIntents = "androidx.test.espresso:espresso-intents:${Version.espressoIntents}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Version.espressoCore}"
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Version.fragmentTesting}"
+    //const val uiautomator = "androidx.test.uiautomator:uiautomator:${Version.uiautomator}"
 }
 
 
