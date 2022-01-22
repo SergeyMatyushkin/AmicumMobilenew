@@ -55,11 +55,17 @@ class AuthorizationFragmentAndroidTest {
     fun activityLogin_IsWorking() {
         onView(withId(R.id.txtLogin)).perform(click())
         onView(withId(R.id.txtLogin)).perform(
-            replaceText("ivanov"),
+            replaceText(LOGIN),
             closeSoftKeyboard()
         )
-        onView(withId(R.id.txtLogin)).perform(pressImeActionButton())
-        onView(withId(R.id.txtLogin)).check(matches(withText("ivanov")))
+        onView(withId(R.id.txtPwd)).perform(click())
+        onView(withId(R.id.txtPwd)).perform(
+            replaceText(PWD),
+            closeSoftKeyboard()
+        )
+
+        onView(withId(R.id.txtPwd)).perform(pressImeActionButton())
+        onView(withId(R.id.txtPwd)).check(matches(withText(PWD)))
     }
 
     @After
