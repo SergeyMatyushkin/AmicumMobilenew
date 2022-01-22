@@ -24,6 +24,7 @@ import org.junit.FixMethodOrder
 import org.junit.runner.OrderWith
 import org.junit.runners.MethodSorters
 import java.lang.StringBuilder
+import com.e.amicummobile.LOGIN
 
 
 @RunWith(AndroidJUnit4::class)
@@ -76,11 +77,11 @@ class BehaviorTest {
         val editText = uiDevice.findObject(By.res(packageName, "txtLogin"))
 
         // Устанавливаем значение
-        editText.text = "UiAutomator"
+        editText.text = LOGIN
 
         // Убеждаемся, что сервер вернул корректный результат. Обратите внимание, что количество
         // результатов может варьироваться во времени, потому что количество репозиториев постоянно меняется .
-        Assert.assertEquals(editText.text.toString(), "UiAutomator")
+        Assert.assertEquals(editText.text.toString(), LOGIN)
     }
 
     //Убеждаемся, что DetailsScreen открывается
