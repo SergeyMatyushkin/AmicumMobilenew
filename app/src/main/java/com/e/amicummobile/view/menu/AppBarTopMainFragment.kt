@@ -2,6 +2,7 @@ package com.e.amicummobile.view.menu
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.*
@@ -59,28 +60,28 @@ class AppBarTopMainFragment : Fragment() {
         binding.tvAppBarTitle.text = title
 
         when (appBarType) {                                                                         // настройка видимости кнопок
-            com.example.config.Const.APP_BAR_MAIN -> {
+            Const.APP_BAR_MAIN -> {
                 binding.btnAppBarMainMenu.visibility = VISIBLE
                 binding.btnAppBarNotification.visibility = VISIBLE
                 binding.btnAppBarSearch.visibility = INVISIBLE
                 binding.btnAppBarBack.visibility = INVISIBLE
                 binding.btnAppBarApply.visibility = INVISIBLE
             }
-            com.example.config.Const.APP_BAR_SECOND -> {
+            Const.APP_BAR_SECOND -> {
                 binding.btnAppBarMainMenu.visibility = INVISIBLE
                 binding.btnAppBarNotification.visibility = INVISIBLE
                 binding.btnAppBarSearch.visibility = VISIBLE
                 binding.btnAppBarBack.visibility = VISIBLE
                 binding.btnAppBarApply.visibility = VISIBLE
             }
-            com.example.config.Const.APP_BAR_MODAL -> {
+            Const.APP_BAR_MODAL -> {
                 binding.btnAppBarMainMenu.visibility = INVISIBLE
                 binding.btnAppBarNotification.visibility = INVISIBLE
                 binding.btnAppBarSearch.visibility = INVISIBLE
                 binding.btnAppBarApply.visibility = VISIBLE
                 binding.btnAppBarBack.visibility = VISIBLE
             }
-            com.example.config.Const.APP_BAR_ONLY_BACK -> {
+            Const.APP_BAR_ONLY_BACK -> {
                 binding.btnAppBarMainMenu.visibility = INVISIBLE
                 binding.btnAppBarNotification.visibility = INVISIBLE
                 binding.btnAppBarSearch.visibility = INVISIBLE
@@ -91,10 +92,10 @@ class AppBarTopMainFragment : Fragment() {
 
         binding.btnAppBarBack.setOnClickListener {
             when (appBarType) {                                                                         // настройка поведения кнопки назад
-                com.example.config.Const.APP_BAR_MAIN, com.example.config.Const.APP_BAR_ONLY_BACK, com.example.config.Const.APP_BAR_SECOND -> {
+                Const.APP_BAR_MAIN, Const.APP_BAR_ONLY_BACK, Const.APP_BAR_SECOND -> {
                     mCallback!!.backFragment("BackFromFragment")
                 }
-                com.example.config.Const.APP_BAR_MODAL -> {
+                Const.APP_BAR_MODAL -> {
                     mCallback!!.backFragment("BackFromModal")
                 }
             }
@@ -145,7 +146,11 @@ class AppBarTopMainFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        mCallback = context as IAppMainMenu
+        try {
+            mCallback = context as IAppMainMenu
+        } catch (e: Exception) {
+            Log.println(Log.ERROR, "AppBarTopMain.onAttach", "Не смог откастовать контекст")
+        }
     }
 
     override fun onDetach() {

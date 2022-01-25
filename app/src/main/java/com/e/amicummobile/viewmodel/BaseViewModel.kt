@@ -5,7 +5,7 @@ import kotlinx.coroutines.*
 
 abstract class BaseViewModel : ViewModel() {
 
-    var jobs = mutableMapOf<String, MutableList<Job>>()                                                    // словарь запущенных корутин - ключ - название метода
+    var jobs = mutableMapOf<String, MutableList<Job>>()           // словарь запущенных корутин - ключ - название метода
 
     // Объявляем свой собственный скоуп
     // В качестве аргумента передается CoroutineContext, который мы составляем через "+" из трех частей:
